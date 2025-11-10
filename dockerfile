@@ -33,6 +33,7 @@ RUN rm -rf ./*
 #opy the built Angular output from Stage 1
 #Adjust this path if your build output folder has a different name (like /dist)
 COPY --from=build /app/dist/ ./
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Optional: if using Angular routing (SPA)
 # COPY nginx.conf /etc/nginx/conf.d/default.conf
